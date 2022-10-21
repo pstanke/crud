@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 const Posts = () => {
   const posts = useSelector(getAllPosts);
+
   return (
     <Row>
       {posts.map((post) => (
