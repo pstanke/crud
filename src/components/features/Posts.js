@@ -1,13 +1,10 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getAllPosts } from '../../redux/postsRedux';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Card, Button, Row, Col } from 'react-bootstrap';
+
 const Posts = () => {
   const posts = useSelector(getAllPosts);
-
   return (
     <Row>
       {posts.map((post) => (

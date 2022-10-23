@@ -1,16 +1,10 @@
-import { useSelector } from 'react-redux';
-import { getPostById } from '../../../redux/postsRedux';
+import { getPostById, removePost } from '../../../redux/postsRedux';
 import { useParams } from 'react-router';
-import { Card } from 'react-bootstrap';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
-import Row from 'react-bootstrap/Row';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import { useState } from 'react';
-import { Modal } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-import { removePost } from '../../../redux/postsRedux';
+import { Modal, Card, Col, Button, Row } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+
 const SinglePost = () => {
   const { postId } = useParams();
   const postData = useSelector((state) => getPostById(state, postId));
@@ -18,12 +12,12 @@ const SinglePost = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const dispatch = useDispatch();
+
   const deletePost = (id) => {
     dispatch(removePost(id));
   };
-  console.log(postData);
-  if (!postData) return <Navigate to='/' />;
 
+  if (!postData) return <Navigate to='/' />;
   return (
     <>
       <Row className='d-flex justify-content-center'>
@@ -61,6 +55,7 @@ const SinglePost = () => {
           </Card>
         </Col>
       </Row>
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Are you sure?</Modal.Title>

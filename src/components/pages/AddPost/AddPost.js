@@ -1,6 +1,6 @@
 import AddPostForm from '../../features/AddPostForm';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Row, Col } from 'react-bootstrap';
+
 const AddPost = () => {
   return (
     <Row className='d-flex justify-content-center'>
