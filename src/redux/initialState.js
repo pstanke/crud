@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
   posts: [
     {
       id: '1',
@@ -26,4 +26,3 @@ const initialState = {
     },
   ],
 };
-export default initialState;

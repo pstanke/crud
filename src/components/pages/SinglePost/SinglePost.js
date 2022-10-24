@@ -1,11 +1,12 @@
-import { getPostById, removePost } from '../../../redux/postsRedux';
+import { Modal, Card, Col, Button, Row } from 'react-bootstrap';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { Navigate, Link } from 'react-router-dom';
-import { useState } from 'react';
-import { Modal, Card, Col, Button, Row } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
 
-const SinglePost = () => {
+import { getPostById, removePost } from '../../../redux/postsRedux';
+
+export const SinglePost = () => {
   const { postId } = useParams();
   const postData = useSelector((state) => getPostById(state, postId));
   const [show, setShow] = useState(false);
@@ -83,4 +84,3 @@ const SinglePost = () => {
     </>
   );
 };
-export default SinglePost;

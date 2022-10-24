@@ -1,14 +1,17 @@
-import { Routes, Route } from 'react-router-dom';
-import Home from './components/pages/Home/Home';
-import SinglePost from './components/pages/SinglePost/SinglePost';
-import AddPost from './components/pages/AddPost/AddPost';
-import EditPost from './components/pages/EditPost/EditPost';
-import About from './components/pages/About/About';
-import ErrorPage from './components/pages/ErrorPage/ErrorPage';
-import Header from './components/views/Header/Header';
-import Footer from './components/views/Footer/Footer';
 import { Container } from 'react-bootstrap';
-function App() {
+
+import { Routes, Route } from 'react-router-dom';
+
+import { Home } from './components/pages/Home/Home';
+import { SinglePost } from './components/pages/SinglePost/SinglePost';
+import { AddPost } from './components/pages/AddPost/AddPost';
+import { EditPost } from './components/pages/EditPost/EditPost';
+import { About } from './components/pages/About/About';
+import { ErrorPage } from './components/pages/ErrorPage/ErrorPage';
+import { Header } from './components/views/Header/Header';
+import { Footer } from './components/views/Footer/Footer';
+
+export function App() {
   return (
     <Container>
       <Header />
@@ -24,5 +27,3 @@ function App() {
     </Container>
   );
 }
-
-export default App;

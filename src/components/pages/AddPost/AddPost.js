@@ -1,7 +1,8 @@
-import AddPostForm from '../../features/AddPostForm';
 import { Row, Col } from 'react-bootstrap';
 
-const AddPost = () => {
+import { AddPostForm } from '../../features/AddPostForm';
+
+export const AddPost = () => {
   return (
     <Row className='d-flex justify-content-center'>
       <Col xs={8}>
@@ -11,4 +12,3 @@ const AddPost = () => {
     </Row>
   );
 };
-export default AddPost;

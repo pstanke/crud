@@ -1,8 +1,9 @@
-import Posts from '../../features/Posts';
 import { Button, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+import { Posts } from '../../features/Posts';
+
+export const Home = () => {
   return (
     <>
       <Row>
@@ -19,4 +20,3 @@ const Home = () => {
     </>
   );
 };
-export default Home;

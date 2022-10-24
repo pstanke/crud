@@ -1,8 +1,8 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Form, FloatingLabel, Button, Col } from 'react-bootstrap';
-import PropTypes from 'prop-types';
 
-const PostForm = ({ action, actionText, ...props }) => {
+export const PostForm = ({ action, actionText, ...props }) => {
   const [title, setTitle] = useState(props.title || '');
   const [author, setAuthor] = useState(props.author || '');
   const [publishedDate, setPublishedDate] = useState(props.publishedDate || '');
@@ -90,5 +90,3 @@ PostForm.propTypes = {
   content: PropTypes.string,
   shortDescription: PropTypes.string,
 };
-
-export default PostForm;

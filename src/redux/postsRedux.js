@@ -19,7 +19,7 @@ export const removePost = (payload) => ({
 export const addPost = (payload) => ({ type: ADD_POST, payload });
 export const editPost = (payload) => ({ type: EDIT_POST, payload });
 
-const postsReducer = (statePart = [], action) => {
+export const postsReducer = (statePart = [], action) => {
   switch (action.type) {
     case REMOVE_POST:
       return statePart.filter((post) => post.id !== action.payload);
@@ -33,5 +33,3 @@ const postsReducer = (statePart = [], action) => {
       return statePart;
   }
 };
-
-export default postsReducer;

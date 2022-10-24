@@ -1,7 +1,8 @@
-import EditPostForm from '../../features/EditPostForm';
 import { Row, Col } from 'react-bootstrap';
 
-const EditPost = () => {
+import { EditPostForm } from '../../features/EditPostForm';
+
+export const EditPost = () => {
   return (
     <Row className='d-flex justify-content-center'>
       <Col xs={8}>
@@ -11,4 +12,3 @@ const EditPost = () => {
     </Row>
   );
 };
-export default EditPost;

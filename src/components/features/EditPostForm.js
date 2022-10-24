@@ -1,10 +1,11 @@
-import PostForm from './PostForm';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPostById, editPost } from '../../redux/postsRedux';
 import { useParams } from 'react-router';
 
-const EditPostForm = () => {
+import { PostForm } from './PostForm';
+
+export const EditPostForm = () => {
   const { postId } = useParams();
   const postData = useSelector((state) => getPostById(state, postId));
   const navigate = useNavigate();
@@ -29,4 +30,3 @@ const EditPostForm = () => {
     />
   );
 };
-export default EditPostForm;

@@ -1,9 +1,7 @@
+import { Container, Navbar, Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { Container } from 'react-bootstrap';
 
-const NavBar = () => {
+export const NavBar = () => {
   return (
     <Navbar bg='primary' variant='dark' className='mt-4 mb-4 rounded '>
       <Container>
@@ -20,4 +18,3 @@ const NavBar = () => {
     </Navbar>
   );
 };
-export default NavBar;
