@@ -5,6 +5,7 @@ import { useParams } from 'react-router';
 import { Navigate, Link } from 'react-router-dom';
 
 import { getPostById, removePost } from '../../../redux/postsRedux';
+import { dateToStr } from '../../../utils/dateToStr';
 
 export const SinglePost = () => {
   const { postId } = useParams();
@@ -49,9 +50,11 @@ export const SinglePost = () => {
               </Row>
               <Card.Text>
                 <strong>Author:</strong> {postData.author} <br />
-                <strong>Published:</strong> {postData.publishedDate}
+                <strong>Published:</strong> {dateToStr(postData.publishedDate)}
               </Card.Text>
-              <Card.Text>{postData.content}</Card.Text>
+              <Card.Text
+                dangerouslySetInnerHTML={{ __html: postData.content }}
+              />
             </Card.Body>
           </Card>
         </Col>
