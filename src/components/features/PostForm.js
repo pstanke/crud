@@ -21,6 +21,7 @@ export const PostForm = ({ action, actionText, ...props }) => {
   const [contentError, setContentError] = useState(false);
   const [publishedDateError, setPublishedDateError] = useState(false);
   const id = props.id;
+
   const {
     register,
     handleSubmit: validate,
@@ -30,7 +31,7 @@ export const PostForm = ({ action, actionText, ...props }) => {
   const handleSubmit = () => {
     setContentError(!content);
     setPublishedDateError(!publishedDate);
-    if (content && publishedDate) {
+    if (content && publishedDate && content !== '<p><br></p>') {
       action({ title, author, publishedDate, shortDescription, content, id });
     }
   };
@@ -106,7 +107,6 @@ export const PostForm = ({ action, actionText, ...props }) => {
         <Form.Label>Main content</Form.Label>
         <ReactQuill
           placeholder='Leave a comment here'
-          style={{ height: '100px' }}
           value={content}
           theme='snow'
           onChange={setContent}
@@ -118,7 +118,7 @@ export const PostForm = ({ action, actionText, ...props }) => {
         )}
       </Form.Group>
 
-      <Button className='mt-5' type='submit' variant='primary'>
+      <Button className='mt-3' type='submit' variant='primary'>
         {actionText}
       </Button>
     </Form>
