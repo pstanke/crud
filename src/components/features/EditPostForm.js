@@ -25,6 +25,7 @@ export const EditPostForm = () => {
       author={postData.author}
       content={postData.content}
       publishedDate={postData.publishedDate}
+      category={postData.category}
       shortDescription={postData.shortDescription}
       id={postId}
     />
